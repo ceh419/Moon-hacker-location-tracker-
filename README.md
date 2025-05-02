@@ -18,7 +18,9 @@ apt upgrade
 pkg install git
 pkg install python
 pkg install pip
-
+git clone https://github.com/ceh419/Moon-hacker-location-tracker-.git
+cd Moon-hacker-location-tracker-
+bash moon.sh
 python3 moon_location_tracker.py
 ```
 
