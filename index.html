@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Tracker</title>
+    <script>
+        // Function to get IP and Location via API
+        function getIPAndLocation() {
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    let ip = data.ip;
+                    let city = data.city;
+                    let country = data.country_name;
+                    let location = city + ", " + country;
+
+                    document.getElementById('ip').textContent = "IP: " + ip;
+                    document.getElementById('location').textContent = "Location: " + location;
+                    document.getElementById('device').textContent = "Device: " + navigator.userAgent;
+                })
+                .catch(err => console.log('Error fetching IP and location data:', err));
+        }
+
+        // Call the function on page load
+        window.onload = getIPAndLocation;
+    </script>
+</head>
+<body>
+    <h1>Location Tracker</h1>
+    <p id="ip">IP: Loading...</p>
+    <p id="location">Location: Loading...</p>
+    <p id="device">Device: Loading...</p>
+</body>
+</html>
