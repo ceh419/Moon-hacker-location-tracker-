@@ -13,6 +13,12 @@ pip install requests
 
 ## ▶️ Usage
 ```bash
+apt update
+apt upgrade
+pkg install git
+pkg install python
+pkg install pip
+
 python3 moon_location_tracker.py
 ```
 
